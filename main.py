@@ -5,7 +5,7 @@ import numpy as np
 
 app = Flask(__name__, template_folder='templates')
 model = pickle.load(open('houseprice.pkl','rb'))
-
+x = []
 @app.route('/')
 
 def index():
@@ -13,19 +13,11 @@ def index():
 
 @app.route('/predict',methods=['GET','POST'])
 def predict():
-    x = []
-    x.append([[request.form.get('area')]])
-    x.append([[request.form.get('bedrooms')]])
-    x.append([[request.form.get('bathrooms')]])
-    x.append([[request.form.get('stories')]])
-    x.append([[request.form.get('mainroad')]])
-    x.append([[request.form.get('guestrooms')]])
-    x.append([[request.form.get('basement')]])
-    x.append([[request.form.get('hotwaterheating')]])
-    x.append([[request.form.get('airconditioning')]])
-    x.append([[request.form.get('parking')]])
-    x.append([[request.form.get('prefarea')]])
-    x.append([[request.form.get('furnishingstatus')]])
+    
+    x.append((float(request.form.get('area')), float(request.form.get('bedrooms')), float(request.form.get('bathrooms')), 
+              float(request.form.get('stories')), float(request.form.get('mainroad')), float(request.form.get('guestrooms')),
+              float(request.form.get('basement')),float(request.form.get('hotwaterheating')),float(request.form.get('airconditioning')),
+              float(request.form.get('parking')),float(request.form.get('prefarea')),float(request.form.get('furnishingstatus'))))
     x2=np.array(x)
     nfeatures,nx,ny = x2.shape
     x_new = x2.reshape((nfeatures,nx*ny))
