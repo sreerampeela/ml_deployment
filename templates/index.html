@@ -1,87 +1,91 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Predicting house prices</title>
+    <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
     <h1>Predicting house prices</h1>
-    <h1>This application predicts house prices based on the data</h1>
-    <h1>The data is from the ML Deployment bootcamp by DevTown</h1>
-    <form action="http://127.0.0.1:5000/predict" method="post">
-        <input type="text" name="area" placeholder="Enter area: "></input>
-        
-        <label for="bedrooms">Select number of bedrooms:</label>
-        <select type="text" name="bedrooms" id="bedrooms">
-            <option value="1">1</option>
-            <option value="2">2</option>
-            <option value="3">3</option>
-            <option value="4">4</option>
-            <option value="5">5</option>
-            <option value="6">6</option>
-        </select>
-        <label for="bathrooms">Select number of bathrooms:</label>
-        <select type="text" name="bathrooms" id="bathrooms">
-            <option value="1">1</option>
-            <option value="2">2</option>
-            <option value="3">3</option>
-            <option value="4">4</option>
-        </select>
-        <label for="stories">Select number of stories:</label>
-        <select name="stories" id="stories">
-            <option value="1">1</option>
-            <option value="2">2</option>
-            <option value="3">3</option>
-            <option value="4">4</option>
-        </select>
-        <label for="mainroad">Select if on mainroad:</label>
-        <select name="mainroad" id="mainroad">
-            <option value="1">Yes</option>
-            <option value="0">No</option>
-        </select>
-        <label for="guestroom">Select if guestroom available:</label>
-        <select name="guestroom" id="guestroom">
-            <option value="1">Yes</option>
-            <option value="0">No</option>
-        </select>
-        <label for="basement">Select if basement available:</label>
-        <select name="basement" id="basement">
-            <option value="1">Yes</option>
-            <option value="0">No</option>
-        </select>
-        <label for="hotwaterheating">Select if hot water heating available:</label>
-        <select name="hotwaterheating" id="hotwaterheating">
-            <option value="1">Yes</option>
-            <option value="0">No</option>
-        </select>
-        <label for="airconditioning">Select if AC available:</label>
-        <select name="airconditioning" id="airconditioning">
-            <option value="1">Yes</option>
-            <option value="0">No</option>
-        </select>
-        <label for="parking">Select number of parking slots:</label>
-        <select name="parking" id="parking">
-            <option value="0">0</option>
-            <option value="1">1</option>
-            <option value="2">2</option>
-            <option value="3">3</option>
-        </select>
-        <label for="prefarea">Select if in preference area:</label>
-        <select name="prefarea" id="prefarea">
-            <option value="1">Yes</option>
-            <option value="0">No</option>
-        </select>
-        <label for="furnishingstatus">Select level of furnishing:</label>
-        <select name="furnishingstatus" id="furnishingstatus">
-            <option value="0">unfurnished</option>
-            <option value="1">semi-furnished</option>
-            <option value="2">furnished</option>
-        </select>
-        <button type="submit">Submit</button>
-
-    </form>
+    <section>
+        <p>This application predicts house prices based on the data</p>
+        <p>The data is from the ML Deployment bootcamp by DevTown</p>
+        <form action="http://127.0.0.1:5000/predict" method="post">
+            <label for="area">Area (in sqft)</label>
+            <input class="area" type="text" name="area" placeholder="Enter area: "></input>
+            <label for="bedrooms">Select number of bedrooms:</label>
+            <select type="text" name="bedrooms" id="bedrooms">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+            </select>
+            <label for="bathrooms">Select number of bathrooms:</label>
+            <select type="text" name="bathrooms" id="bathrooms">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+            </select>
+            <label for="stories">Select number of stories:</label>
+            <select name="stories" id="stories">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+            </select>
+            <label for="mainroad">Select if on mainroad:</label>
+            <select name="mainroad" id="mainroad">
+                <option value="1">Yes</option>
+                <option value="0">No</option>
+            </select>
+            <label for="guestroom">Select if guestroom available:</label>
+            <select name="guestroom" id="guestroom">
+                <option value="1">Yes</option>
+                <option value="0">No</option>
+            </select>
+            <label for="basement">Select if basement available:</label>
+            <select name="basement" id="basement">
+                <option value="1">Yes</option>
+                <option value="0">No</option>
+            </select>
+            <label for="hotwaterheating">Select if hot water heating available:</label>
+            <select name="hotwaterheating" id="hotwaterheating">
+                <option value="1">Yes</option>
+                <option value="0">No</option>
+            </select>
+            <label for="airconditioning">Select if AC available:</label>
+            <select name="airconditioning" id="airconditioning">
+                <option value="1">Yes</option>
+                <option value="0">No</option>
+            </select>
+            <label for="parking">Select number of parking slots:</label>
+            <select name="parking" id="parking">
+                <option value="0">0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+            </select>
+            <label for="prefarea">Select if in preference area:</label>
+            <select name="prefarea" id="prefarea">
+                <option value="1">Yes</option>
+                <option value="0">No</option>
+            </select>
+            <label for="furnishingstatus">Select level of furnishing:</label>
+            <select name="furnishingstatus" id="furnishingstatus">
+                <option value="0">unfurnished</option>
+                <option value="1">semi-furnished</option>
+                <option value="2">furnished</option>
+            </select>
+            <button type="submit">Submit</button>
+        </form>
+    </section>
     <h3><br>{{prediction_text}}</h3>
 </body>
 </html>
